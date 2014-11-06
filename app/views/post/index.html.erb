@@ -1,0 +1,18 @@
+<table>
+<thead>
+  <tr>
+   <th>title</th>
+   <th>content</th>
+  </tr>
+</thead>
+<%@posts.each do |post| %>
+   <tr>
+   <td><%=post.title %></td>
+   <td><%=post.body %></td>
+  <td><%= link_to 'Show', chitter_path(:post => post.id) %></td>
+   </tr>
+<% end %>
+</table>
+
+<!--New link to create a new post-->
+<%= link_to 'New Post', chatter_path %>
